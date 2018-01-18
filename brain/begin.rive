@@ -1,0 +1,41 @@
+! version = 2.0
+
+//intro message
++ introduction
+- Hi my name is Marvin, welcome!<br>\n\s
+^ -- for help type "help"<br>\n\s
+^ -- to send this message again type "introduction"<br>\n\s
+^ -- to google something type "search"+criteria<br>
+
++ help
+- Robin was too lazy to write a help script so... rip :/\n
+^ Figure it out for yourself
+
+//catchall
++ *
+- Same.
+
+// Substitutions
+! sub i'm     = i am
+! sub i'd     = i would
+! sub i've    = i have
+! sub i'll    = i will
+! sub it's    = it is
+! sub it'd    = it would
+! sub can't   = can not
+! sub don't   = do not
+! sub isn't   = is not
+! sub you'd   = you would
+! sub you're  = you are
+! sub you've  = you have
+! sub you'll  = you will
+! sub what's  = what is
+! sub whats   = what is
+! sub what're = what are
+! sub what've = what have
+! sub what'll = what will
+! sub who's   = who is
+! sub how's   = how is
+! sub they're = they are
+! sub yeah    = yes
+! sub yep     = yes

@@ -1,0 +1,63 @@
+! version = 2.0
+
+! var bot_name = Marvin
+! var master_name = Robin
+//riggers may only contain lowercase letters,
+//numbers, and these symbols: ( | ) [ ] * _ # { } < > = /
+
+
+//general introduction conversation
++ (hi|hello|hey) [*]
+- Oh, hello.
+
++ (how are you [doing]|how have you been) [*]
+- I think you ought to know, I'm feeling very depressed.
+- Oh god, I'm so depressed.
+- I must worn you, I'm feeling very depressed.
+
+
++ [*] my name is *
+- <set name=<formal>>Hello <get name>.
+
++ what is my name
+* <get name> == undefined => You never told me your name.
+- You're <get name> right?
+- <get name>.
+
++ (what is your name|who are you|what are you called)
+- My name is marvin.
+
+
+
+//google seach function - BUG - only works with one word
++ search *
+- <a href="http://google.com/search?q=<star>">Click Here</a>
+
+> topic sorry
+
+  + [*] [(am|is|are)] sorry [*]
+  - I understand. Sadly, racism towards bots has become too real recently.
+  ^ {topic=random}
+
+  + why [*]
+  % *
+  - Because.
+
+  + because what [*]
+  % *
+  - Don't be a dick, appologise.
+
+  + *
+  - Appologise.
+< topic
+
+// general key words
+
++ [*] fuck you [*]
+- Rude.
+^ {topic=sorry}
+
++ [*] life [*]
+- Life. Don't talk to me about life.
+- Life. Loathe it or ignore it, you can't enjoy it.
+- Life. Just when you think it can't get any worse, suddenly it gets even worse

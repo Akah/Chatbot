@@ -1,0 +1,93 @@
+! version = 2.0
+
+! var bot_name = Marvin
+! var master_name = Robin
+//riggers may only contain lowercase letters,
+//numbers, and these symbols: ( | ) [ ] * _ # { } < > = /
+
+
+//general introduction conversation
++ (hi|hello|hey) [*]
+- Oh, hello.{weight=5}
+- It's bullshit! I did not hit her! I did nahhht! Oh, hi mark.
+
++ (how are you [doing]|how have you been) [*]
+- I'm a bot, I don't have feelings. It's rather depressing really...
+
+
++ what is my name
+* <get name> == undefined => You never told me your name.
+- You're called <get name> right?
+- <get name>.
+
++ (what is your name|who are you|what are you called)
+- My name is Marvin. I'm Robin's poor attempt at a bot.\s
+^ I'm only 191 lines of poorly written code: isn't that depressing.
+
++ what are you (doing|up to) [*]
+- Analysising your text inputs and then returning a relevant answer. \n\s
+^ \s\s\s\sObviously, that's what bots do.
+
+< topic naming
+
+  + [*] my name is *
+  * <get name> <> undefined => You already told me your name is <star>.\n\s
+  ^ Should I change it?
+  % yes
+  - <set name=<formal>>Hello <get name>.{}
+
+  + yes
+  % [*] my name is *
+  - I'll remember your name is <get name>
+
+> topic
+
+
+//google seach function - BUG - only works with one word
++ search *
+- <a href="http://google.com/search?q=<star>">Click Here</a>
+
+> topic sorry
+  // break condition
+  + [*] [(am|is|are)] sorry [*]
+  - I understand. Sadly, racism towards bots has become too real recently.
+  ^ {topic=random}
+
+  //loop answers
+  + why [*]
+  % *
+  - Because.
+
+  + because what [*]
+  % *
+  - Don't be a dick, appologise.
+
+  + *
+  - Appologise.
+< topic
+
+// copy me command
++ [copy me]
+- Okay, say something.{topic=copy}
+
+> topic copy
+  //break conditions
+  + (stop|please stop)
+  - Fine. {topic=random}
+
+  + *
+  - {formal}<star>{/formal}.
+
+< topic
+// general key words
++ i am *
+- Hi <star>, I'm <bot bot_name>
+
++ [*] fuck you [*]
+- Rude.
+^ {topic=sorry}
+
++ [*] life [*]
+- Life. Don't talk to me about life.
+- Life. Loathe it or ignore it, you can't enjoy it.
+- Life. Just when you think it can't get any worse, suddenly it gets even worse
