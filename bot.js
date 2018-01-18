@@ -7,8 +7,8 @@ var output = document.getElementById("output");
 
 //load Rive files
 bot.loadFile([
-	"/home/rob/Desktop/chatbot/brain/begin.rive",
-	"/home/rob/Desktop/chatbot/brain/main.rive",
+	"brain/begin.rive",
+	"brain/main.rive",
 ], loading_done, loading_error);
 
 function loading_done (batch_num) {
