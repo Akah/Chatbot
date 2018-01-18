@@ -3,6 +3,7 @@
 //intro message
 + introduction
 - Hi my name is Marvin, welcome!<br>\n\s
+^ This page is currently only styled for mobile and as such will look disgusting on a large screen
 ^ -- for help type "help"<br>\n\s
 ^ -- to send this message again type "introduction"<br>\n\s
 ^ -- to google something type "search"+criteria<br>
